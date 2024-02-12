@@ -1,0 +1,54 @@
+﻿@page "/kalkV1"
+
+<h1>Základní matematické operace</h1>
+<hr />
+<label>Číslo 1: <input @bind="cislo1" /></label>
+<br />
+<label>Číslo 2: <input @bind="cislo2" /></label>
+<div class="m-3">
+    <button @onclick="Soucet" class="btn">Součet (+)</button>
+    <button @onclick="Rozdil" class="btn btn-primary">Rozdíl (-)</button>
+    <button @onclick="Soucin" class="btn btn-secondary">Součin (*)</button>
+    <button @onclick="Podil" class="btn btn-success">Podíl (/)</button>
+</div>
+<div>
+    <label>Výsledek: <input @bind="vysledek" readonly /></label>
+</div>
+
+@code {
+    private double cislo1;  //gmgh
+    private double cislo2;
+    private double vysledek;
+
+    /// <summary>
+    /// Součet 2 čísel
+    /// </summary>
+    private void Soucet()
+    {
+        vysledek = cislo1 + cislo2;//gjhg
+    }
+
+    /// <summary>
+    /// Rozdíl 2 čísel
+    /// </summary>
+    private void Rozdil()
+    {
+        vysledek = cislo1 - cislo2;
+    }
+
+    /// <summary>
+    /// Soucin 2 čísel
+    /// </summary>
+    private void Soucin()
+    {
+        vysledek = cislo1 * cislo2;
+    }
+
+    /// <summary>
+    /// Podíl 2 čísel
+    /// </summary>
+    private void Podil()
+    {
+        vysledek = cislo1 / cislo2;
+    }
+}
