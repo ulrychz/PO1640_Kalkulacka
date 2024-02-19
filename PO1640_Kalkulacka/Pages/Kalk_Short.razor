@@ -14,19 +14,30 @@
 <div>
     <label>Výsledek: <input @bind="vysledek" readonly /></label>
 </div>
-
+<hr />
+<label><input type="checkbox" @bind-value = "kontrolaPreteceni"/> Kontrola přetečení</label>
 
 @code {
     private short cislo1;  //gmgh
     private short cislo2;
     private short vysledek;
-
+    private bool kontrolaPreteceni = false;
     /// <summary>
     /// Součet 2 čísel
     /// </summary>
     private void Soucet()
     {
-        vysledek = (short)(cislo1 + cislo2);//gjhg
+        if (kontrolaPreteceni)
+        {
+            checked
+            {
+                vysledek = (short)(cislo1 + cislo2);
+            }
+        }
+        else
+        {
+            vysledek = (short)(cislo1 + cislo2);//gjhg
+        }
     }
 
     /// <summary>
